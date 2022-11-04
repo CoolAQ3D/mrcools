@@ -1,5 +1,10 @@
-alert("hello world")
+alertr("Hi bro")
+const header = document.createElement("HEADER")
+header.setAttribute("id", "myHeader");
+document.body.appendChild(header);
 
-const h1 = document.createElement("h1")
-h1.innerHTML = "Hi"
-document.body.append(h1)
+var y = document.createElement("H3"); 
+var t = document.createTextNode("This is a h3 element in a header element");
+y.appendChild(t);
+
+document.getElementById("myHeader").appendChild(y);
