@@ -1,4 +1,6 @@
-alert("Hi bro")
+alert("Yo bro hi :)")
+
+
 const header = document.createElement("HEADER")
 header.setAttribute("id", "myHeader");
 document.body.appendChild(header);
