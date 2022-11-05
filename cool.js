@@ -1,3 +1,4 @@
+alert("Hiiiiii")
 //Load Jquery
 var script = document.createElement('script');
 script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
@@ -8,7 +9,7 @@ script.onload = function () {
 
 //load html main
 $('body').prepend(`<div>
-<div style="background-color:gray;color:white"> MrCool YouTube Redesign </div>
+<div id="cooltools" style="background-color:black;color:white;position: fixed !important"> MrCool YouTube Redesign </div>
 </div>`)
 
 //Load CSS main
@@ -30,13 +31,13 @@ function youtube_parser(url){
     return (match&&match[7].length==11)? match[7] : false;
 }
 
+  video_id = youtube_parser()
 
-$.get("https://returnyoutubedislikeapi.com/votes?videoId=7FEyjd2hNSk", function(data, status){
-  dislikes = data.dislikes
-  x = $('#segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next--button-text-content > span').text()
-  x = x + " | " + dislikes
-  //alert(x)
-  $("#segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next--button-text-content > span").html(x)
+$.get(`https://returnyoutubedislikeapi.com/votes?videoId=${video_id}`, function(data, status){
+
+  dislikes = "Dislike: " + data.dislikes
+  $("#cooltools").html(dislikes)
+  
 })
     
 };
