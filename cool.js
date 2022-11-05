@@ -1,4 +1,4 @@
-alert("Hiiiiii")
+alert('#1')
 //Load Jquery
 var script = document.createElement('script');
 script.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
@@ -22,7 +22,7 @@ $('head').append(`<style>
 
 
 //Load Javascript
-
+try {
 url = window.location.href.slice(window.location.href.indexOf('?') + 1);
 
 function youtube_parser(url){
@@ -39,6 +39,11 @@ $.get(`https://returnyoutubedislikeapi.com/votes?videoId=${video_id}`, function(
   $("#cooltools").html(dislikes)
   
 })
+
+}
+  catch(err) {
+    
+  }
     
 };
 
